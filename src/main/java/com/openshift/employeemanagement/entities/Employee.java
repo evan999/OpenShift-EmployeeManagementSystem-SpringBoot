@@ -19,7 +19,7 @@ public class Employee {
 //    private String skills;
     private String supervisor;
     private Double salary;
-    private Date dateHired;
+//    private Date dateHired;
 
     public Employee() {}
 
@@ -31,6 +31,10 @@ public class Employee {
     public Employee(String name, String role, String department, String location, String supervisor, Double salary) {
         this.name = name;
         this.role = role;
+        this.department = department;
+        this.location = location;
+        this.supervisor = supervisor;
+        this.salary = salary;
     }
 
     public Long getId() {
@@ -97,12 +101,12 @@ public class Employee {
         this.salary = salary;
     }
 
-    public Date getDateHired() {
-        return dateHired;
-    }
-
-    public void setDateHired (Date dateHired) {
-        this.dateHired = dateHired;
-    }
+//    public Date getDateHired() {
+//        return dateHired;
+//    }
+//
+//    public void setDateHired (Date dateHired) {
+//        this.dateHired = dateHired;
+//    }
 
 }

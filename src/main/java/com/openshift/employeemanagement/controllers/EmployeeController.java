@@ -35,7 +35,7 @@ public class EmployeeController {
 
     @GetMapping("/location/{location}")
     public ResponseEntity<List<Employee>> getEmployeesByLocation(@PathVariable String location) {
-        return new ResponseEntity<>(repository.findAllByDepartment(location, Sort.by("name")), HttpStatus.OK);
+        return new ResponseEntity<>(repository.findAllByLocation(location, Sort.by("name")), HttpStatus.OK);
     }
 
     @GetMapping("/supervisor/{supervisor}")
@@ -64,9 +64,7 @@ public class EmployeeController {
         if (updates.getDepartment() != null) Employee.setDepartment(updates.getDepartment());
         if (updates.getLocation()!= null) Employee.setLocation(updates.getLocation());
         if (updates.getSupervisor()!= null) Employee.setSupervisor(updates.getSupervisor());
-//        if (updates.getSkills() != null) Employee.setSkills(updates.getSkills());
         if (updates.getSalary()!= null) Employee.setSalary(updates.getSalary());
-//        if (updates.getDateHired()!= null) Employee.setDateHired(updates.getDateHired());
 
         return repository.save(Employee);
     }
